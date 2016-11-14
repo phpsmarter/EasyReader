@@ -1,4 +1,4 @@
-import parse from 'url-parse';
+                 import parse from 'url-parse';
 
 const rules = [
   {
@@ -70,13 +70,13 @@ const rules = [
         }
         links[base*4+plus] = link;
       });
-  
+
       for (let link of links) {
         if (link) {
           box.append(link);
         }
       }
-  
+
       return box.find('a');
     },
     //工作在文章页面

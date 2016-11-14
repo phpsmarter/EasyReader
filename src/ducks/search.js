@@ -1,4 +1,5 @@
 //@flow
+//ducks里面都是一些定义好的函数
 import { createAction,handleActions } from 'redux-actions';
 import {Master} from '../parser';
 import { createReducer } from 'redux-immutablejs'
@@ -12,7 +13,7 @@ const FAILED = 'novel/search/FAILED';
 export const search = (keywords:string)=>{
   return (dispatch:func) => {
     let master = new Master();
-    
+
     master.search(keywords,(novel)=>{
       dispatch(foundNovel({
         keywords,
@@ -23,7 +24,7 @@ export const search = (keywords:string)=>{
     }).catch((error)=>{
       dispatch(failed(error));
     });
-    
+
     dispatch(_search(keywords));
   };
 }

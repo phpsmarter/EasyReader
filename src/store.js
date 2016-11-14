@@ -5,13 +5,15 @@ import thunk from 'redux-thunk';
 import { Platform } from 'react-native';
 import Immutable from 'immutable';
 import {reducers} from './ducks';
+const createLogger = require('redux-logger');
 
 import { composeWithDevTools } from 'remote-redux-devtools';
-
+const logger = createLogger();
 const store = createStore(reducers,
   Immutable.fromJS({}),
   composeWithDevTools(applyMiddleware(
-      thunk
+      thunk,
+      logger
     ))
 );
 
@@ -25,3 +27,5 @@ if (module.hot) {
 }
 
 export default store;
+
+

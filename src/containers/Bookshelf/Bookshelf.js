@@ -113,7 +113,7 @@ class Bookshelf extends React.Component {
                   onPress: Actions.search
               }}
               left={{
-                label:" "
+                label:""
               }}
           />
             <SwipeListView

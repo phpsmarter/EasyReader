@@ -7,6 +7,7 @@ import {Provider,connect} from 'react-redux';
 require('./db');
 
 import {Bookshelf,Search,Directory,Reader} from './containers';
+console.log('bookshelf',Bookshelf);
 
 
 let realm = realmFactory();
